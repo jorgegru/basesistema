@@ -21,9 +21,9 @@ return [
             "driver" => 'mysql', // mysql or postgree
             "host" => 'localhost',
             "port" => '',
-            "dbname" => 'sac',
+            "dbname" => 'indique',
             "user" => 'root',
-            "pass" => 'vagrant'
+            "pass" => 'datascan'
         ],
     ],
 ];

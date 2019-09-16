@@ -36,15 +36,6 @@
     },
     "scripts": {
         "start": "php -S localhost:8080 -t public",
-        "test": "phpunit",
-        "post-root-package-install": [
-            "@php -r \"file_exists('migrations') || mkdir('/migrations', 0777, true);\""
-        ],
-        "post-create-project-cmd": [
-            "@php -r \"file_exists('migrations') || mkdir('/migrations', 0777, true);\""
-        ],
-        "post-install-cmd": [
-            "@php -r \"file_exists('migrations') || mkdir('/migrations', 0777, true);\""
-        ]
+        "test": "phpunit"
     }
 }
