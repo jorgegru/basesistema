@@ -38,8 +38,7 @@
         "start": "php -S localhost:8080 -t public",
         "test": "phpunit",
         "post-install-cmd ": [
-            "@mkdir migrations",
-            "@chmod 777 -R migrations"
+            "@php -r \"file_exists('migrations') || mkdir('/migrations', 0777, true);\""
         ]
     }
 }
