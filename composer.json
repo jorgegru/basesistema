@@ -38,8 +38,8 @@
         "start": "php -S localhost:8080 -t public",
         "test": "phpunit",
         "post-root-package-install": [
-            "mkdir migrations",
-            "chmod 777 -R migrations"
+            "@mkdir migrations",
+            "@chmod 777 -R migrations"
         ]
     }
 }
