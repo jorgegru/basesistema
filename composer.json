@@ -12,9 +12,10 @@
     ],
     "require": {
         "php": ">=5.6",
-        "slim/slim": "^3.1",
+        "jorgegru/migrate": "^1.0",
+        "monolog/monolog": "^1.17",
         "slim/php-view": "^2.0",
-        "monolog/monolog": "^1.17"
+        "slim/slim": "^3.1"
     },
     "require-dev": {
         "phpunit/phpunit": ">=5.0"
@@ -35,6 +36,10 @@
     },
     "scripts": {
         "start": "php -S localhost:8080 -t public",
-        "test": "phpunit"
+        "test": "phpunit",
+        "post-root-package-install": [
+            "mkdir migrations",
+            "chmod 777 -R migrations"
+        ]
     }
 }

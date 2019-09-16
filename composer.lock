@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb1a6732ea7b6a7a56700b425a1689bc",
+    "content-hash": "2562174e12eb87c1ba82c6ff7a91282b",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -36,6 +36,45 @@
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
             "time": "2017-02-14T19:40:03+00:00"
+        },
+        {
+            "name": "jorgegru/migrate",
+            "version": "1.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jorgegru/PHPMigrate.git",
+                "reference": "4fc3d0fc96138d557b4ea6d0b041ff6d1eacfd02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jorgegru/PHPMigrate/zipball/4fc3d0fc96138d557b4ea6d0b041ff6d1eacfd02",
+                "reference": "4fc3d0fc96138d557b4ea6d0b041ff6d1eacfd02",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPMigrate": "App/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Jorge Goulart",
+                    "email": "jorgegru@gmail.com"
+                }
+            ],
+            "description": "Migração de Banco de dados",
+            "time": "2017-03-07T16:00:21+00:00"
         },
         {
             "name": "monolog/monolog",
