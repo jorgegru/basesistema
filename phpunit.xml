@@ -15,8 +15,8 @@
 
     <php>
         <var name="DB_DSN" value="mysql:dbname=indique;host=localhost" />
-        <var name="DB_USER" value="root2" />
-        <var name="DB_PASSWD" value="datascan2" />
-        <var name="DB_DBNAME" value="indique2" />
+        <var name="DB_USER" value="root" />
+        <var name="DB_PASSWD" value="datascan" />
+        <var name="DB_DBNAME" value="indique" />
     </php>
 </phpunit>
