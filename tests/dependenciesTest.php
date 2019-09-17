@@ -27,6 +27,9 @@ class dependenciesTest extends BaseTestCase
     public function testConnectionDb()
     {
         $settings = $this->app()->getContainer()['settings']['db'];
+
+        var_dump($settings);
+
         //database connection
         try {
             //mysql pdo connection
