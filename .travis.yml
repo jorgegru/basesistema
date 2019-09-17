@@ -17,6 +17,7 @@ before_script:
 
 script: 
   - ./vendor/bin/phpunit --configuration ./travis.phpunit.xml.dist
+  - php vendor/jorgegru/migrate/start init
   - php vendor/jorgegru/migrate/start migrate
 
 notifications:
