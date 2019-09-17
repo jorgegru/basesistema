@@ -21,8 +21,8 @@ return [
             "driver" => env('DB_DRIVER','mysql'), 
             "host"   => env('DB_HOST','localhost'),
             "port"   => env('DB_PORT',''),
-            "dbname" => env('DB_NAME',''),
-            "user"   => env('DB_USER',''),
+            "dbname" => env('DB_NAME','indique'),
+            "user"   => env('DB_USER','indique'),
             "pass"   => env('DB_PASS','')
         ],
     ],
