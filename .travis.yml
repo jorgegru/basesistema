@@ -12,8 +12,8 @@ before_script:
   ## Composer
   - travis_retry composer self-update
   - travis_retry composer install
-  - mysql -e 'CREATE DATABASE indique;'
-  - mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'datascan';"
+  - mariadb -e 'CREATE DATABASE indique;'
+  - mariadb -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'datascan';"
 
 script: 
   - ./vendor/bin/phpunit --configuration ./travis.phpunit.xml.dist
