@@ -3,8 +3,8 @@ language: php
 php:
   - 7.2
 
-services:
-  - mariadb
+addons:
+  mariadb: '10.1.40'
 
 before_script:
   ## Packages
@@ -12,8 +12,8 @@ before_script:
   ## Composer
   - travis_retry composer self-update
   - travis_retry composer install
-  - mariadb -e 'CREATE DATABASE indique;'
-  - mariadb -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'datascan';"
+  - mysql -e 'CREATE DATABASE indique;'
+  - mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'datascan';"
 
 script: 
   - ./vendor/bin/phpunit --configuration ./travis.phpunit.xml.dist
