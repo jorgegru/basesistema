@@ -4,7 +4,7 @@ php:
   - 7.2
 
 addons:
-  mariadb: '10.1'
+  mariadb: '10'
 
 before_script:
   ## Packages
