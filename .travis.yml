@@ -13,7 +13,8 @@ before_script:
   - travis_retry composer self-update
   - travis_retry composer install
   - mysql -e 'CREATE DATABASE indique;'
-  - cp .env.example .env
+  - mysql -u root -e "CREATE USER 'indique'@'localhost' IDENTIFIED BY 'indique';"
+  - mysql -u root -e "GRANT ALL ON indique.* TO 'indique'@'localhost';"
 
 script: composer test
 
