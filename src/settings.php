@@ -1,4 +1,13 @@
 <?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+if (file_exists(base_path() . '/.env')) {
+    $dotenv = Dotenv\Dotenv::create(base_path());
+    $dotenv->load();
+}else{
+    echo "Arquivo de configuração não encontrado";die;
+}
+
 return [
     'settings' => [
         'displayErrorDetails' => true, // set to false in production
@@ -22,7 +31,7 @@ return [
             "host"   => env('DB_HOST','localhost'),
             "port"   => env('DB_PORT',''),
             "dbname" => env('DB_NAME','indique'),
-            "user"   => env('DB_USER','indique'),
+            "user"   => env('DB_USER','root'),
             "pass"   => env('DB_PASS','')
         ],
     ],
