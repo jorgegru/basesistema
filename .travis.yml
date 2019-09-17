@@ -4,7 +4,7 @@ php:
   - 7.2
 
 services:
-  - mysql
+  - mariadb
 
 before_script:
   ## Packages
