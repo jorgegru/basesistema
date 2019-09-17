@@ -133,6 +133,7 @@ class BaseTestCase extends TestCase
 
     final public function getConnection()
     {
+        echo $GLOBALS['DB_USER'];die;
         if ($this->conn === null) {
             if ($this->conn == null) {
                 $this->conn = new \PDO( $GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD'] );
