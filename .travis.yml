@@ -13,8 +13,10 @@ before_script:
   - travis_retry composer self-update
   - travis_retry composer install
   - mysql -e 'CREATE DATABASE indique;'
+  - ALTER USER 'root'@'localhost' IDENTIFIED BY 'datascan';'
 
-script: composer test
+script: 
+  - ./vender/bin/phpunit
 
 notifications:
   email: false
