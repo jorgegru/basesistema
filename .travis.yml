@@ -13,6 +13,7 @@ before_script:
   - travis_retry composer self-update
   - travis_retry composer install
   - mysql -e 'CREATE DATABASE indique;'
+  - cp .env.example .env
 
 script: composer test
 
