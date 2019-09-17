@@ -15,7 +15,7 @@ before_script:
   - mysql -e 'CREATE DATABASE indique;'
   - mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'datascan';"
 
-script: composer test
+script: ./vendor/bin/phpunit --configuration ./travis.phpunit.xml.dist
 
 notifications:
   email: false
