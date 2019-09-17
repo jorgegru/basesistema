@@ -40,7 +40,10 @@
     },
     "scripts": {
         "start": "php -S localhost:8080 -t public",
-        "test": "phpunit"
+        "test": "phpunit",
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
     }
     
 }
