@@ -18,12 +18,12 @@ return [
 
         // Database connection settings
         "db" => [
-            "driver" => 'mysql', // mysql or postgree
-            "host" => 'localhost',
-            "port" => '',
-            "dbname" => 'indique',
-            "user" => 'root',
-            "pass" => 'datascan'
+            "driver" => env('DB_DRIVER','mysql'), 
+            "host"   => env('DB_HOST','localhost'),
+            "port"   => env('DB_PORT',''),
+            "dbname" => env('DB_NAME',''),
+            "user"   => env('DB_USER',''),
+            "pass"   => env('DB_PASS','')
         ],
     ],
 ];

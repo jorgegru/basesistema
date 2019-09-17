@@ -59,26 +59,31 @@ class BaseTestCase extends TestCase
         // Set up a response object
         $response = new Response();
 
+        if (file_exists(base_path() . '/.env')) {
+            $dotenv = \Dotenv\Dotenv::create(base_path());
+            $dotenv->load();
+        }else{
+            echo "Arquivo de configuração não encontrado";die;
+        }
+
         // Use the application settings
-        $settings = require __DIR__ . '/../../src/settings.php';
+        $settings = require base_path().'/src/settings.php';
 
         // Instantiate the application
         $app = new App($settings);
 
-        require __DIR__ . '/../../src/functions.php';
-
         // Set up dependencies
-        $dependencies = require __DIR__ . '/../../src/dependencies.php';
+        $dependencies = require base_path().'/src/dependencies.php';
         $dependencies($app);
 
         // Register middleware
         if ($this->withMiddleware) {
-            $middleware = require __DIR__ . '/../../src/middleware.php';
+            $middleware = require base_path().'/src/middleware.php';
             $middleware($app);
         }
 
         // Register routes
-        $routes = require __DIR__ . '/../../src/routes.php';
+        $routes = require base_path().'/src/routes.php';
         $routes($app);
 
         // Process the application
@@ -92,26 +97,30 @@ class BaseTestCase extends TestCase
     public function app()
     {
 
+        if (file_exists(base_path() . '/.env')) {
+            $dotenv = \Dotenv\Dotenv::create(base_path());
+            $dotenv->load();
+        }else{
+            echo "Arquivo de configuração não encontrado";die;
+        }
         // Use the application settings
-        $settings = require __DIR__ . '/../../src/settings.php';
+        $settings = require base_path().'/src/settings.php';
 
         // Instantiate the application
         $app = new App($settings);
 
-        require __DIR__ . '/../../src/functions.php';
-
         // Set up dependencies
-        $dependencies = require __DIR__ . '/../../src/dependencies.php';
+        $dependencies = require base_path().'/src/dependencies.php';
         $dependencies($app);
 
         // Register middleware
         if ($this->withMiddleware) {
-            $middleware = require __DIR__ . '/../../src/middleware.php';
+            $middleware = require base_path().'/src/middleware.php';
             $middleware($app);
         }
 
         // Register routes
-        $routes = require __DIR__ . '/../../src/routes.php';
+        $routes = require base_path().'/src/routes.php';
         $routes($app);
 
         $app->getContainer()['conn'] = $this->getConnection();
@@ -121,8 +130,6 @@ class BaseTestCase extends TestCase
 
     }
 
-
-    
 
     final public function getConnection()
     {
@@ -135,4 +142,5 @@ class BaseTestCase extends TestCase
 
         return $this->conn;
     }
+
 }
