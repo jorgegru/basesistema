@@ -2,4 +2,5 @@ preset: recommended
 finder:
   exclude:
     - vendor
+    - public/adminlte
   name: "*.php"
