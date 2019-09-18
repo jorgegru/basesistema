@@ -2,12 +2,11 @@
 
 namespace Tests\Functional;
 
+use PHPUnit\Framework\TestCase;
 use Slim\App;
+use Slim\Http\Environment;
 use Slim\Http\Request;
 use Slim\Http\Response;
-use Slim\Http\Environment;
-use PHPUnit\Framework\TestCase;
-
 
 /**
  * This is an example class that shows how you could set up a method that
@@ -25,17 +24,18 @@ class BaseTestCase extends TestCase
     protected $withMiddleware = true;
 
     // só instancia o pdo uma vez para limpeza de teste e carregamento de ambiente
-    static private $pdo = null;
+    private static $pdo = null;
 
     // só instancia PHPUnit_Extensions_Database_DB_IDatabaseConnection uma vez por teste
     private $conn = null;
 
     /**
-     * Process the application given a request method and URI
+     * Process the application given a request method and URI.
      *
-     * @param string $requestMethod the request method (e.g. GET, POST, etc.)
-     * @param string $requestUri the request URI
-     * @param array|object|null $requestData the request data
+     * @param string            $requestMethod the request method (e.g. GET, POST, etc.)
+     * @param string            $requestUri    the request URI
+     * @param array|object|null $requestData   the request data
+     *
      * @return \Slim\Http\Response
      */
     public function runApp($requestMethod, $requestUri, $requestData = null)
@@ -44,7 +44,7 @@ class BaseTestCase extends TestCase
         $environment = Environment::mock(
             [
                 'REQUEST_METHOD' => $requestMethod,
-                'REQUEST_URI' => $requestUri
+                'REQUEST_URI'    => $requestUri,
             ]
         );
 
@@ -59,11 +59,12 @@ class BaseTestCase extends TestCase
         // Set up a response object
         $response = new Response();
 
-        if (file_exists(base_path() . '/.env')) {
+        if (file_exists(base_path().'/.env')) {
             $dotenv = \Dotenv\Dotenv::create(base_path());
             $dotenv->load();
-        }else{
-            echo "Arquivo de configuração não encontrado";die;
+        } else {
+            echo 'Arquivo de configuração não encontrado';
+            die;
         }
 
         // Use the application settings
@@ -93,15 +94,14 @@ class BaseTestCase extends TestCase
         return $response;
     }
 
-
     public function app()
     {
-
-        if (file_exists(base_path() . '/.env')) {
+        if (file_exists(base_path().'/.env')) {
             $dotenv = \Dotenv\Dotenv::create(base_path());
             $dotenv->load();
-        }else{
-            echo "Arquivo de configuração não encontrado";die;
+        } else {
+            echo 'Arquivo de configuração não encontrado';
+            die;
         }
         // Use the application settings
         $settings = require base_path().'/src/settings.php';
@@ -125,22 +125,18 @@ class BaseTestCase extends TestCase
 
         $app->getContainer()['conn'] = $this->getConnection();
 
-     
         return $app;
-
     }
-
 
     final public function getConnection()
     {
         if ($this->conn === null) {
             if ($this->conn == null) {
-                $this->conn = new \PDO( $GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD'] );
+                $this->conn = new \PDO($GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWD']);
             }
             //$this->conn = $this->createDefaultDBConnection(self::$pdo, $GLOBALS['DB_DBNAME']);
         }
 
         return $this->conn;
     }
-
 }

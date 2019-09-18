@@ -7,7 +7,7 @@ use Tests\Functional\BaseTestCase;
 class settingsTest extends BaseTestCase
 {
     /**
-     * Test validando email
+     * Test validando email.
      */
     public function testSettingsDb()
     {
