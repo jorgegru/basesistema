@@ -16,9 +16,9 @@ before_script:
   - mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'datascan';"
 
 script: 
-  - ./vendor/bin/phpunit --configuration ./travis.phpunit.xml.dist
   - php vendor/jorgegru/migrate/start init
   - php vendor/jorgegru/migrate/start migrate
+  - ./vendor/bin/phpunit --configuration ./travis.phpunit.xml.dist
 
 notifications:
   email: false
