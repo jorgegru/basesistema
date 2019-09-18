@@ -1,6 +1,6 @@
 <?php
 
-$config = require __DIR__."/src/settings.php";
+$config = require __DIR__.'/src/settings.php';
 
 return [
 
