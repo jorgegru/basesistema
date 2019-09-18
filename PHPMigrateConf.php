@@ -11,6 +11,6 @@ return [
         'username'  => $config['settings']['db']['user'],
         'password'  => $config['settings']['db']['pass'],
         'charset'   => 'utf8',
-        'path'   => __DIR__.'/migrations/', 
+        'path'      => __DIR__.'/migrations/', 
     ],
 ];
