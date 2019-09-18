@@ -1,6 +1,9 @@
-php:
-  preset: recommended
-  enabled:
-    - alpha_ordered_imports
-  disabled:
-    - length_ordered_imports
+preset: recommended
+enabled:
+  - alpha_ordered_imports
+disabled:
+  - length_ordered_imports
+finder:
+  exclude:
+    - vendor
+  name: "*.php"
