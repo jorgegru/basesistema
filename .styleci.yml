@@ -7,4 +7,3 @@ php:
   finder:
     exclude:
       - vendor
-css: true
