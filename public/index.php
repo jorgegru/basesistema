@@ -24,7 +24,7 @@ if (file_exists(base_path().'/.env')) {
     $dotenv->load();
 } else {
     echo 'Arquivo de configuração não encontrado';die;
-}
+}  
 
 // Instantiate the app
 $settings = require base_path().'/src/settings.php';
