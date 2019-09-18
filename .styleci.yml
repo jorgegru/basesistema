@@ -1,6 +1,4 @@
 preset: recommended
-enabled:
-  - alpha_ordered_imports
 finder:
   exclude:
     - vendor
